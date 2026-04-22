@@ -1,0 +1,159 @@
+/* ===== Owner Section ===== */
+.owner-section {
+  padding: 120px 20px;
+  background: linear-gradient(120deg, #ffe5e5, #fff0f0);
+  overflow: hidden;
+}
+
+.owner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  flex-wrap: wrap;
+  opacity: 0; /* initial state for animation */
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.owner-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.owner-image img {
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #b71c1c;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.owner-image img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.owner-info {
+  max-width: 600px;
+  text-align: left;
+}
+
+.owner-info h2 {
+  font-size: 2.8rem;
+  color: #b71c1c;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.owner-info h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.owner-info p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  text-decoration: none;
+  background: linear-gradient(90deg, #b71c1c, #8e0000);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .owner-container {
+    gap: 40px;
+  }
+
+  .owner-image img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .owner-info h2 {
+    font-size: 2.4rem;
+  }
+
+  .owner-info h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .owner-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .owner-image img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .owner-info {
+    text-align: center;
+  }
+
+  .owner-info h2 {
+    font-size: 2rem;
+  }
+
+  .owner-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .owner-info p {
+    font-size: 1rem;
+  }
+
+  .contact-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .owner-image img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .owner-info h2 {
+    font-size: 1.8rem;
+  }
+
+  .owner-info h3 {
+    font-size: 1.3rem;
+  }
+
+  .owner-info p {
+    font-size: 0.95rem;
+  }
+
+  .contact-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
