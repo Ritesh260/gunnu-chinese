@@ -24,9 +24,11 @@ function Navbar() {
     }
   };
 
-  // Search filter
+  /* SAFE SEARCH FILTER */
   const filteredDishes = dishes.filter((dish) =>
-    dish.name.toLowerCase().includes(search.toLowerCase())
+    (dish.name || "")
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
 
   return (
@@ -38,7 +40,7 @@ function Navbar() {
           <img src={logo} alt="Gunnu Logo" className="logo-img" />
         </div>
 
-        {/* Mobile Icon */}
+        {/* Mobile Menu */}
         <div
           className="menu-icon"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -46,7 +48,7 @@ function Navbar() {
           <i className={menuOpen ? "fas fa-times" : "fas fa-bars"}></i>
         </div>
 
-        {/* Nav Links */}
+        {/* Links */}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
 
           <li>
@@ -93,9 +95,10 @@ function Navbar() {
               }}
             />
 
-            {/* Results */}
+            {/* Search Results */}
             {search && filteredDishes.length > 0 && (
               <ul className="search-results">
+
                 {filteredDishes.map((dish) => (
                   <li
                     key={dish._id}
@@ -124,7 +127,9 @@ function Navbar() {
                         }}
                       />
 
-                      <span>{dish.name}</span>
+                      <span>
+                        {dish.name}
+                      </span>
 
                       <span
                         style={{
@@ -137,6 +142,7 @@ function Navbar() {
                     </RouterLink>
                   </li>
                 ))}
+
               </ul>
             )}
 
@@ -147,6 +153,7 @@ function Navbar() {
               </ul>
             )}
           </li>
+
         </ul>
       </div>
     </nav>

@@ -1,159 +1,255 @@
-/* ===== Owner Section ===== */
+/* Owner.css */
+
 .owner-section {
-  padding: 120px 20px;
-  background: linear-gradient(120deg, #ffe5e5, #fff0f0);
+  padding: 110px 20px;
+  background: linear-gradient(135deg, #fff7f0, #fff0ea, #fff7f5);
   overflow: hidden;
 }
 
-.owner-container {
+/* MAIN */
+.owner-main {
+  max-width: 1350px;
+  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 60px;
+  justify-content: space-between;
+  gap: 80px;
   flex-wrap: wrap;
-  opacity: 0; /* initial state for animation */
-  transform: translateY(30px);
-  transition: all 1s ease;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
 }
 
-.owner-container.fade-in {
+.owner-main.owner-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.owner-image img {
-  width: 270px;
-  height: 270px;
+/* LEFT */
+.owner-left {
+  flex: 1;
+  min-width: 340px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.owner-circle {
+  position: absolute;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #ff4d4d, #b71c1c);
+  opacity: 0.1;
+  animation: pulse 4s infinite;
+}
+
+.owner-img-box {
+  width: 360px;
+  height: 460px;
+  border-radius: 35px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
+}
+
+.owner-img-box img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 5px solid #b71c1c;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: 0.5s;
 }
 
-.owner-image img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+.owner-img-box:hover img {
+  transform: scale(1.08);
 }
 
-.owner-info {
-  max-width: 600px;
-  text-align: left;
+.owner-floating-card {
+  position: absolute;
+  bottom: 25px;
+  right: 10px;
+  background: #fff;
+  padding: 14px 20px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 3;
+  font-weight: 700;
+  color: #111;
 }
 
-.owner-info h2 {
-  font-size: 2.8rem;
+.owner-floating-card svg {
+  color: #ff9800;
+}
+
+/* RIGHT */
+.owner-right {
+  flex: 1;
+  min-width: 380px;
+}
+
+.owner-small-title {
   color: #b71c1c;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
-.owner-info h3 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
+.owner-right h2 {
+  font-size: 3.4rem;
+  line-height: 1.15;
+  margin: 15px 0;
+  color: #111;
 }
 
-.owner-info p {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 30px;
+.owner-right h2 span {
+  color: #b71c1c;
 }
 
-.contact-btn {
+.owner-right h3 {
+  font-size: 1.7rem;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.owner-right p {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: #666;
+  max-width: 620px;
+  margin-bottom: 35px;
+}
+
+/* FEATURES */
+.owner-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.owner-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 18px 22px;
+  border-radius: 22px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-weight: 600;
+  color: #111;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.owner-card svg {
+  color: #b71c1c;
+  font-size: 20px;
+}
+
+.owner-card:hover {
+  transform: translateY(-6px);
+}
+
+/* BUTTON */
+.owner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
-  background: linear-gradient(90deg, #b71c1c, #8e0000);
+  background: linear-gradient(135deg, #111, #333);
   color: #fff;
-  padding: 14px 30px;
+  padding: 16px 34px;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 1.1rem;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  transition: all 0.4s ease;
+  transition: 0.4s;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.contact-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+.owner-btn:hover {
+  transform: translateY(-5px);
+  gap: 16px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  .owner-container {
-    gap: 40px;
+/* ANIMATION */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: .08;
   }
-
-  .owner-image img {
-    width: 240px;
-    height: 240px;
+  50% {
+    transform: scale(1.08);
+    opacity: .13;
   }
-
-  .owner-info h2 {
-    font-size: 2.4rem;
-  }
-
-  .owner-info h3 {
-    font-size: 1.8rem;
+  100% {
+    transform: scale(1);
+    opacity: .08;
   }
 }
 
-@media (max-width: 768px) {
-  .owner-container {
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .owner-main {
     flex-direction: column;
     text-align: center;
   }
 
-  .owner-image img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
+  .owner-right p {
+    margin: 0 auto 35px;
   }
 
-  .owner-info {
-    text-align: center;
+  .owner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .owner-right h2 {
+    font-size: 2.4rem;
   }
 
-  .owner-info h2 {
-    font-size: 2rem;
+  .owner-img-box {
+    width: 290px;
+    height: 390px;
   }
 
-  .owner-info h3 {
-    font-size: 1.5rem;
+  .owner-circle {
+    width: 330px;
+    height: 330px;
   }
 
-  .owner-info p {
-    font-size: 1rem;
-  }
-
-  .contact-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
+  .owner-floating-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: -20px;
   }
 }
 
 @media (max-width: 480px) {
-  .owner-image img {
-    width: 160px;
-    height: 160px;
+  .owner-section {
+    padding: 80px 15px;
   }
 
-  .owner-info h2 {
-    font-size: 1.8rem;
+  .owner-right h2 {
+    font-size: 2rem;
   }
 
-  .owner-info h3 {
+  .owner-right h3 {
     font-size: 1.3rem;
   }
 
-  .owner-info p {
-    font-size: 0.95rem;
+  .owner-img-box {
+    width: 240px;
+    height: 320px;
   }
 
-  .contact-btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+  .owner-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
